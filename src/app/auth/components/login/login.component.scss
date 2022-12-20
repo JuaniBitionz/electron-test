@@ -1,0 +1,47 @@
+.btz-games-logo{
+    width: 135px!important;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background-dark-primary);
+}
+.login-input-row{
+    width: 440px;
+}
+span:hover{
+    cursor: pointer
+}
+.login-card{
+    border-radius: 5px;
+    background-color: var(--color-background-dark-secondary);
+    width: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    transition-duration: .3s;
+}
+.login-card:hover{
+    cursor: pointer;
+    background-color: #211e33;
+}
+hr{
+    border-top: 1.5px solid white!important;
+    width: 440px;
+}
+@media (max-width: 768px){
+    .login-input-row{
+        width: 300px;
+    }
+    .login-card{
+        width: 300px;
+    }
+    hr{
+        width: 300px;
+    }
+}

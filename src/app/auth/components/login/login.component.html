@@ -1,0 +1,66 @@
+<div class="container-fluid login-container text-color-light">
+    <form (ngSubmit)="login()" [formGroup]="formLogin">
+        <div class="row justify-content-center">
+            <img [src]="btzGamesLogo" alt="BTZ Games" class="btz-games-logo">
+        </div>
+        <div class="row justify-content-center mt-4">
+            <h5 class="text-center">Inicia sesión en tu cuenta</h5>
+        </div>
+        <div class="row justify-content-center mt-4 login-input-row">
+            <mat-form-field appearance="fill" class="text-input-dark">
+                <mat-label>Nombre de usuario o correo electrónico</mat-label>
+                <input formControlName="username" matInput required>
+            </mat-form-field>
+            <mat-error *ngIf="username?.hasError('required') && username?.touched">Este campo es obligatorio</mat-error>
+        </div>
+        <div class="row justify-content-center mt-4 login-input-row">
+            <mat-form-field appearance="fill" class="text-input-dark">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" [type]="passwordShow ? 'text' : 'password'" matInput required>
+                <div class="d-flex" matSuffix>
+                    <button type="button" mat-icon-button>
+                        <mat-icon (click)="showPassword()" class="material-icons-outlined mx-1">{{passwordShow ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    </button>
+                    <button type="button" matTooltip="La contraseña debe tener más de 7 caractéres, contener un número y una letra"
+                            matTooltipPosition="above"
+                            matTooltipClass="tooltip-dark"
+                            mat-icon-button>
+                        <mat-icon class="material-icons-outlined mx-1">help</mat-icon>
+                    </button>
+                </div>
+            </mat-form-field>
+            <mat-error *ngIf="password?.hasError('required') && password?.touched">Este campo es obligatorio</mat-error>
+        </div>
+        <mat-error *ngIf="loginError" class="mt-4">{{loginError}}</mat-error>
+        <div class="row login-input-row">
+            <div class="col-xs-12 col-md-4 text-start p-0 mt-4">
+                <mat-checkbox formControlName="remember">Recordar cuenta</mat-checkbox>        
+            </div>
+            <div class="col-xs-12 col-md-8 text-md-end text-xs-start p-0 mt-4">
+                <a class="link-light" [routerLink]="['/password-recover']">¿Has olvidado tu contraseña?</a>
+            </div>
+        </div>
+        <div class="row login-input-row mt-4">
+            <button type="submit" [disabled]="loading || formLogin.invalid" class="button button-big button-primary d-flex justify-content-center align-items-center">
+                <mat-spinner *ngIf="loading" diameter="30" class="me-3 dark-spinner"></mat-spinner>
+                Iniciar sesión
+            </button>
+        </div>
+        <div class="row mt-4">
+            <label class="text-center">o Inicia sesión con:</label>
+        </div>
+        <div class="row mt-4">
+            <div class="login-card">
+                <img [src]="googleLogoColor" alt="Google">
+                <label class="ms-1">Google</label>
+            </div>
+        </div>
+        <hr class="mt-4">
+        <div class="row justify-content-center mt-4">
+            <label class="common-subtitle text-center">¿No tienes una cuenta?</label>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <a [routerLink]="['/sign-in']" class="text-light text-center">Crear cuenta</a>
+        </div>
+    </form>
+</div>
