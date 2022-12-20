@@ -1,2 +1,37 @@
-<p>header works!</p>
-<a routerLink="/login">login</a>
+<div class="container-fluid header-container">
+    <img class="btz-logo" [src]="btzLogo" alt="BTZ Games">
+    <div class="header-button-group">
+        <button class="header-button" mat-fab>
+            <mat-icon>
+                <span class="header-button-icon material-icons-sharp">grid_view</span>
+            </mat-icon>
+        </button>
+        <button class="header-button ms-2" mat-fab  [matMenuTriggerFor]="menu">
+            <span class="header-button-icon material-icons-sharp">person</span>
+        </button>
+        <mat-menu #menu="matMenu">
+            <h5 class="common-subtitle ps-3 pt-2">Welcome, User</h5>
+            <hr>
+            <ul class="mt-2 mb-0 w-100">
+                <li class="profile-menu-item">
+                    <span class="common-label">Ajustes</span>
+                </li>
+                <li class="profile-menu-item">
+                    <span class="common-label">Mi cuenta</span>
+                    <span class="material-icons-outlined small-icon">
+                        open_in_new
+                    </span>
+                </li>
+                <li class="profile-menu-item">
+                    <span class="common-label">Seguridad</span>
+                    <span class="material-icons-outlined small-icon">
+                        open_in_new
+                    </span>
+                </li>
+                <li class="profile-menu-item" routerLink="login">
+                    <span class="common-label">Cerrar sesión</span>
+                </li>
+            </ul>
+        </mat-menu>
+    </div>
+</div>

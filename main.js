@@ -1,27 +1,23 @@
-import { app, BrowserWindow, ipcMain, shell } from "electron";
+const { app, BrowserWindow, ipcMain, shell } = require("electron");
 // const Store = require("electron-store");
-import { setupTitlebar, attachTitlebarToWindow } from "custom-electron-titlebar/main";
 
 let appWin;
 // const store = new Store();
 
-setupTitlebar();
-
 createWindow = () => {
     appWin = new BrowserWindow({
-        width: 1366,
-        height: 768,
+        width: 1440,
+        height: 1024,
         title: "BTZ Launcher",
         resizable: true,
         webPreferences: {
             sandbox: false,
             contextIsolation: false,
             nodeIntegration: true,
-            preload: path.join(__dirname, 'preload.js')
         },
-        frame: false
+        frame: true
+        
     });
-    attachTitlebarToWindow(appWin);
     appWin.loadURL(`file://${__dirname}/dist/index.html`);
 
     appWin.setMenu(null);

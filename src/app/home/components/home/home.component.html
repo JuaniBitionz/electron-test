@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="container-fluid home-container">
+    <div class="container-fluid home-news-slider background-color-secondary h-100">
+        <swiper [config]="headerSwiper">
+            <ng-template *ngFor="let item of news" swiperSlide>
+                <div class="container-fluid slide-container" [style.background-image]="'url('+item.img+')'">
+                    <h3 class="text-color-light">{{item.title}}</h3>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</div>

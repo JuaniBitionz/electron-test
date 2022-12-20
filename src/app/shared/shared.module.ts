@@ -12,6 +12,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     MatTooltipModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    SwiperModule
   ],
   exports: [
     MatInputModule,
@@ -38,7 +42,9 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     MatTooltipModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    SwiperModule
   ]
 })
 export class SharedModule { }

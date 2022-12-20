@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @include mat.core();
+@import "~swiper/css";
 
 $front-bitionz-games-primary: mat.define-palette(mat.$indigo-palette);
 $front-bitionz-games-accent: mat.define-palette(
@@ -131,21 +132,25 @@ h1 {
   font-size: var(--font-size-xxxx-large)!important;
   line-height: var(--font-lh-xxxx-large)!important;
   font-weight: var(--font-weight-bold)!important;
+  font-family: "Work Sans", sans-serif !important;
 }
 h2 {
   font-size: var(--font-size-xxx-large)!important;
   line-height: var(--font-lh-xxx-large)!important;
   font-weight: var(--font-weight-bold)!important;
+  font-family: "Work Sans", sans-serif !important;
 }
 h3 {
   font-size: var(--font-size-xx-large) !important;
   line-height: var(--font-lh-xx-large) !important;
   font-weight: var(--font-weight-bold) !important;
+  font-family: "Work Sans", sans-serif !important;
 }
 h4 {
   font-size: var(--font-size-x-large)!important;
   line-height: var(--font-lh-x-large)!important;
   font-weight: var(--font-weight-bold)!important;
+  font-family: "Work Sans", sans-serif !important;
 }
 h5 {
   font-size: var(--font-size-large)!important;
@@ -278,7 +283,9 @@ h5 {
   min-width: 50px;
   padding: 0;
 }
-
+.small-icon{
+  font-size: 16px!important;
+}
 //Radio button
 .mat-radio-button {
   font-family: "Work Sans", sans-serif !important;
@@ -574,3 +581,6 @@ a {
   border-bottom: 3px solid var(--color-primary-00);
 }
 
+.launcher-padding{
+  padding-top: 90px;
+}
