@@ -29,4 +29,8 @@ export class ElectronStoreService {
     this.store.set(key, value);
   }
 
+  delete = (key: string): void => {
+    this.store.delete(key);
+  }
+
 }

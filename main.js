@@ -23,7 +23,6 @@ createWindow = () => {
     appWin.loadURL(`file://${__dirname}/dist/index.html`);
 
     appWin.setMenu(null);
-
     // appWin.webContents.openDevTools();
 
     appWin.on("closed", () => {
@@ -39,8 +38,8 @@ app.on("window-all-closed", () => {
     }
 });
 
-ipcMain.on("message", (event) => {event.reply("reply", "pong")})
+// ipcMain.on("message", (event) => {event.reply("reply", "pong")})
 
-ipcMain.on('open-program', () => {
-    shell.openPath("C:/Program Files (x86)/Counter-Strike 1.6/hl.exe");
-})
+// ipcMain.on('open-program', () => {
+//     shell.openPath("C:/Program Files (x86)/Counter-Strike 1.6/hl.exe");
+// })
