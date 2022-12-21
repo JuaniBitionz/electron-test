@@ -302,6 +302,7 @@ h5 {
 //Links
 a {
   text-decoration: none !important;
+  transition-duration: .3s;
   &:hover {
     text-decoration: underline !important;
     cursor: pointer;
@@ -316,6 +317,10 @@ a {
 }
 .link-light {
   color: var(--color-text-light);
+  max-width: fit-content;
+  &:hover{
+    color: var(--color-primary-00)!important;
+  }
 }
 .link-light-underline {
   color: var(--color-text-light);
@@ -583,4 +588,12 @@ a {
 
 .launcher-padding{
   padding-top: 90px;
+}
+
+.primary-badge{
+  padding: 5px;
+  color: #FFF!important;
+  background-color: rgba(69, 90, 228, 0.4);
+  border-radius: 5px;
+  max-width: fit-content;
 }

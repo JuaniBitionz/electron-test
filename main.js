@@ -6,8 +6,8 @@ let appWin;
 
 createWindow = () => {
     appWin = new BrowserWindow({
-        width: 1440,
-        height: 1024,
+        width: 1280,
+        height: 720,
         title: "BTZ Launcher",
         resizable: true,
         webPreferences: {

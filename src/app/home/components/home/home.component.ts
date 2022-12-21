@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { SwiperComponent } from "swiper/angular";
 
-import SwiperCore, { Navigation, SwiperOptions } from "swiper";
+import SwiperCore, { Navigation, Pagination, Scrollbar, SwiperOptions } from "swiper";
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
 @Component({
   selector: 'app-home',
@@ -37,13 +37,46 @@ export class HomeComponent implements OnInit {
   ]
 
   headerSwiper: SwiperOptions = {
-    navigation: true,
-    slidesPerView: 1
+    slidesPerView: 1,
+    spaceBetween: 0,
+    // navigation: true,
+    pagination: { clickable: true },
+    scrollbar: { draggable: true },
+    loop: true
   }
+
+  games: any[] = [
+    {
+      logo: './assets/img/home/game-logo-example.svg',
+      img: './assets/img/home/home-card-example.png'
+    },
+    {
+      logo: './assets/img/home/game-logo-example.svg',
+      img: './assets/img/home/home-card-example.png'
+    },
+    {
+      logo: './assets/img/home/game-logo-example.svg',
+      img: './assets/img/home/home-card-example.png'
+    },
+  ]
+
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  
+  ngAfterViewInit(): void{
+    console.log(this.swiper);
+  }
 
+  swiperNext(){
+    this.swiper?.swiperRef.slideNext(300);
+    console.log('next');
+    
+  }
+  swiperBack(){
+    this.swiper?.swiperRef.slidePrev(300);
+  }
 }
