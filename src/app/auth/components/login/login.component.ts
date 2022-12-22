@@ -69,5 +69,6 @@ export class LoginComponent implements OnInit {
     //   this.loginError = error as string;
     //   this.loading = false;
     // }
+    this.router.navigate([``])
   }
 }

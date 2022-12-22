@@ -9,14 +9,16 @@
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
-    z-index: 12;
+    z-index: 50;
 }
 .btz-logo{
     width: 80px;
+    cursor: pointer;
 }
 .mat-button-wrapper{
     padding: 0!important;
 }
+
 .header-button{
     border: 1px solid transparent;
     width: 48px!important;
@@ -29,6 +31,9 @@
     transition-duration: .3s;
 }
 .header-button:hover{
+    background-color: var(--color-neutral-40)!important;
+}
+.header-button-active{
     background-color: var(--color-neutral-40)!important;
 }
 .header-button-icon{
@@ -49,20 +54,25 @@
         padding: 0;
         list-style: none;
     }
-    .profile-menu-item{
-        color: #fff;
-        font-family: "Work Sans", sans-serif !important;
-        padding: 10px 10px;
-        cursor: pointer;
-        width: 200px;
-        transition-duration: .3s;
-        padding-left: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    li{
+        margin-right: 0 !important;
     }
-    .profile-menu-item:hover{
-        background-color: var(--color-neutral-40)!important;
-    }
+}
+.profile-menu-item{
+    color: #fff;
+    font-family: "Work Sans", sans-serif !important;
+    padding: 10px 10px;
+    cursor: pointer;
+    width: 200px;
+    max-width: 200px !important;
+    transition-duration: .3s;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0 !important;
+}
+.profile-menu-item:hover{
+    background-color: var(--color-neutral-40) !important;
 }
 

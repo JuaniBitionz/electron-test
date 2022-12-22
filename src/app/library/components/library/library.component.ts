@@ -1,0 +1,36 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  styleUrls: ['./library.component.scss']
+})
+export class LibraryComponent implements OnInit {
+
+  games: any[] = [
+    {
+      logo: './assets/img/home/game-logo-example.svg',
+      img: './assets/img/home/home-card-example.png',
+      name: 'Full Kombat',
+      state: 'installed'
+    },
+    {
+      logo: './assets/img/home/game-logo-example.svg',
+      img: './assets/img/home/home-card-example.png',
+      name: 'Full Kombat',
+      state: 'downloading'
+    },
+    {
+      logo: './assets/img/home/game-logo-example.svg',
+      img: './assets/img/home/home-card-example.png',
+      name: 'Full Kombat',
+      state: 'update'
+    },
+  ]
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

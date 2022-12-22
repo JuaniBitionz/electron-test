@@ -15,7 +15,15 @@ createWindow = () => {
             contextIsolation: false,
             nodeIntegration: true,
         },
-        frame: true
+
+        titleBarStyle: 'hidden',
+        titleBarOverlay: {
+            color: '#141220',
+            symbolColor: '#79778f',
+            height: 30
+            
+        },
+        
         
     });
     appWin.loadURL(`file://${__dirname}/dist/index.html`);

@@ -48,15 +48,21 @@ export class HomeComponent implements OnInit {
   games: any[] = [
     {
       logo: './assets/img/home/game-logo-example.svg',
-      img: './assets/img/home/home-card-example.png'
+      img: './assets/img/home/home-card-example.png',
+      name: 'Full Kombat',
+      state: 'installed'
     },
     {
       logo: './assets/img/home/game-logo-example.svg',
-      img: './assets/img/home/home-card-example.png'
+      img: './assets/img/home/home-card-example.png',
+      name: 'Full Kombat',
+      state: 'downloading'
     },
     {
       logo: './assets/img/home/game-logo-example.svg',
-      img: './assets/img/home/home-card-example.png'
+      img: './assets/img/home/home-card-example.png',
+      name: 'Full Kombat',
+      state: 'update'
     },
   ]
 
@@ -68,13 +74,11 @@ export class HomeComponent implements OnInit {
   }
   
   ngAfterViewInit(): void{
-    console.log(this.swiper);
+    // console.log(this.swiper);
   }
 
   swiperNext(){
     this.swiper?.swiperRef.slideNext(300);
-    console.log('next');
-    
   }
   swiperBack(){
     this.swiper?.swiperRef.slidePrev(300);

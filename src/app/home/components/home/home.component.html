@@ -8,7 +8,7 @@
                         <h3 class="text-color-light">{{item.title}}</h3>
                         <a class="link-light">Leer más</a>
                     </div>
-                    <div class="slide-gradient">.</div>
+                    <div class="slide-gradient">{{''}}</div>
                 </div>
             </ng-template>
         </swiper>
@@ -30,10 +30,10 @@
         <div class="our-games-cards-wrapper">
             <div class="our-games-card" *ngFor="let card of games">
                 <div class="row h-100">
-                    <div class="col-5 d-flex align-items-center justify-content-center">
+                    <div class="col-6 d-flex align-items-center justify-content-center">
                         <img [src]="card.logo">
                     </div>
-                    <div class="col-7 d-flex p-0">
+                    <div class="col-6 d-flex p-0">
                         <img class="our-games-card-img" [src]="card.img">
                     </div>
                 </div>
@@ -43,11 +43,36 @@
     <div class="container-fluid your-games-container text-color-light">
         <h4>Tus juegos</h4> 
         <div class="your-games-cards-wrapper">
-            <div class="your-games-card" *ngFor="let card of games" [style.background]="'linear-gradient(to left, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%), url('+card.img+')'">
+            <div class="your-games-card" *ngFor="let card of games" [style.background]="'linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%), url('+card.img+')'">
                 <div class="your-games-card-logo-col">
                     <img [src]="card.logo">
                 </div>
-                
+                <div class="your-games-card-info">
+                    <div class="row mb-4">
+                        <div class="col-2 ps-4">
+                            <ng-container [ngSwitch]="card.state">
+                                <button *ngSwitchCase="'installed'" class="me-2 swiper-nav-button" mat-mini-fab>
+                                    <mat-icon>
+                                        play_arrow
+                                    </mat-icon>
+                                </button>
+                                <button *ngSwitchCase="'downloading'" class="me-2 swiper-nav-button downloading-button" mat-mini-fab>
+                                    <span class="downloading-value ">50%</span>
+                                    <mat-progress-spinner value="50" diameter="40" mode="determinate"></mat-progress-spinner>
+                                </button>
+                                <button *ngSwitchCase="'update'" class="me-2 swiper-nav-button" mat-mini-fab>
+                                    <mat-icon>
+                                        arrow_downward
+                                    </mat-icon>
+                                </button>
+                            </ng-container>
+                        </div>
+                        <div class="col-auto ps-4">
+                            <p class="common-subtitle text-color-light mb-0">{{card.name}}</p>
+                            <p class="common-label text-color-muted">{{card.state | titlecase}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

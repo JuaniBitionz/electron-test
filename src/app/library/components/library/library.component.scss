@@ -1,91 +1,13 @@
-.home-container{
+.library-container{
+    width: 100%;
     height: 100%;
-    background-color: var(--color-neutral-100);
-    padding: 0;
-}
-.home-news-slider{
-    height: 600px!important;
-    padding: 0!important;
-    width: 100%;
-}
-.swiper{
-    height: 100%;
-    width: 100%;
-}
-.slide-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    // padding: 30px;
-    background-size: cover;
-    background-position: 0% 0%!important;
-    transition-duration: .3s;
-}
-.slide-content{
-    position: relative;
-    z-index: 31;
-}
-.slide-gradient{
-    height: 100%!important;
-    width: 100%;
-    position: absolute;
-    z-index: 30;
-    background: linear-gradient(0deg, #060411 0.55%, rgba(6, 4, 17, 0) 166.28%);
-    transition-duration: .3s;
-    margin-bottom: -100%;
-}
-.slide-container:hover{
-   .slide-gradient{
-        margin-bottom: 0;
-   } 
-}
-.swiper-button-group{
-    display: flex;
-    align-items: center;
-    margin-left: 2%;
-    margin-top: -5%;
-    position: absolute;
-    z-index: 20;
-}
-.swiper-nav-button{
-    background-color: var(--color-neutral-60)!important;
-}
-.swiper-nav-button:hover{
-    background-color: var(--color-neutral-40)!important;
-}
-//OUR GAMES
-.our-games-container{
-    padding: 60px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: var(--color-neutral-80);
+    padding: 20px;
 }
-.our-games-cards-wrapper{
-    max-width: 100%;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.our-games-card{
-    background-color: var(--color-neutral-100);
-    width: 440px;
-    height: 240px;
-    display: flex;
-    align-items: center;
+.library-title{
     border-radius: 10px;
-    margin-right: 40px;
-}
-.our-games-card-img{
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+    background-color: var(--color-neutral-60);
+    padding: 20px;
 }
 .your-games-container{
     padding: 60px 60px;
@@ -158,4 +80,10 @@
     top: 50%;
     left: 50%;
     font-family: "Work Sans", sans-serif !important;
+}
+.swiper-nav-button{
+    background-color: var(--color-neutral-60)!important;
+}
+.swiper-nav-button:hover{
+    background-color: var(--color-neutral-40)!important;
 }

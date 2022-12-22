@@ -53,7 +53,7 @@ body {
   --color-neutral-20: #79778f;
   --color-neutral-40: #58566f;
   --color-neutral-60: #29273e;
-  --color-neutral-80: #141220;
+  --color-neutral-80: #1B1730;
   --color-neutral-100: #060411;
   //Feedback
   --color-feedback-success: #00cc66;
@@ -107,6 +107,28 @@ body {
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
   --font-weight-regular: 400;
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #78778f #58566f;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #58566f;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #78778f;
+    border-radius: 10px;
+    border: 0px none #ffffff;
+  }
 }
 
 //Classes
@@ -118,6 +140,9 @@ body {
 //Text
 .text-color-light {
   color: var(--color-text-light);
+}
+.text-color-muted {
+  color: var(--color-text-grey-dark);
 }
 
 //Background Colors
@@ -475,6 +500,9 @@ a {
 }
 //Menu
 .mat-menu-panel {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
   a {
     font-family: "Work Sans", sans-serif !important;
     &:hover {
@@ -587,9 +615,9 @@ a {
 }
 
 .launcher-padding{
-  padding-top: 90px;
+  padding-top: 100px !important;
+  // padding-top: 0px;
 }
-
 .primary-badge{
   padding: 5px;
   color: #FFF!important;

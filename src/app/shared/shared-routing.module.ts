@@ -8,6 +8,10 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: 'library',
+        loadChildren: () => import('../library/library.module').then(m => m.LibraryModule),
+      },
+      {
         path: '',
         loadChildren: () => import('../home/home.module').then(m => m.HomeModule),
       },
