@@ -1,0 +1,73 @@
+.game-detail-container{
+    width: 100%;
+    height: fit-content!important;
+    padding: 0!important;
+    padding-bottom: 50px !important;
+    background-color: var(--color-neutral-80);
+    overflow: hidden;
+}
+.game-detail-header{
+    height: 470px;
+    background-size: cover !important;
+    background-position: center !important;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    z-index: 10
+}
+.game-detail-logo{
+    width: 220px;
+    margin-bottom: 150px;
+}
+.game-detail-info{
+    display: flex;
+    position: relative;
+    height: fit-content;
+    width: 100%;
+}
+.game-detail-info-state{
+    position: absolute;
+    margin-top: -50px;
+    z-index: 100;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.downloading-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.downloading-value{
+    position: absolute;
+    font-size: 10px;
+    width: fit-content!important;
+    height: fit-content!important;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-family: "Work Sans", sans-serif !important;
+}
+.game-detail-button{
+    display: flex !important;
+    align-items: center;
+    padding: 20px 40px;
+    width: fit-content !important;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: var(--color-primary-00)!important;
+    border: none;
+    transition-duration: .3s;
+}
+.game-detail-button:hover{
+    background-color: var(--color-neutral-40)!important;
+}
+.social-icon{
+    margin: 0 10px;
+    width: 20px;
+}

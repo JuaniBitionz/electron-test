@@ -3,7 +3,7 @@
         <h4 class="m-0 text-color-light">Biblioteca</h4>
     </div>
     <div class="your-games-cards-wrapper">
-        <div class="your-games-card" *ngFor="let card of games" [style.background]="'linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%), url('+card.img+')'">
+        <div [routerLink]="card.id" class="your-games-card" *ngFor="let card of games" [style.background]="'linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%), url('+card.img+')'">
             <div class="your-games-card-logo-col">
                 <img [src]="card.logo">
             </div>
