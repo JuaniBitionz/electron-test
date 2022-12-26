@@ -18,7 +18,7 @@
     "electron-package-win": "electron-packager ./ BTZLauncher --platform=win32 --arch=x64 --ignore=node_modules",
     "electron-package-linux": "electron-packager ./ BTZLauncher --platform=linux --arch=x64 --ignore=node_modules",
     "electron-package-mac": "electron-packager ./ BTZLauncher --platform=darwin --arch=x64 --ignore=node_modules",
-    "electron-builder": "electron-builder"
+    "electron-builder": "ng build --configuration production && electron-builder -w"
   },
   "build": {
     "appId": "electron-test",
