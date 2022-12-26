@@ -26,7 +26,7 @@ createWindow = () => {
         
         
     });
-    appWin.loadURL(`file://${__dirname}/dist/index.html`);
+    appWin.loadURL(`file://${__dirname}/out/electron-test/index.html`);
 
     appWin.setMenu(null);
     // appWin.webContents.openDevTools();

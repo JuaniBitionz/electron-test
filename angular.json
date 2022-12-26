@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "out/electron-test",
             "index": {
               "input":  "src/index.html",
               "output": "index.html"
