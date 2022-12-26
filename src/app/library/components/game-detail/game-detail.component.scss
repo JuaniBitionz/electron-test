@@ -1,6 +1,7 @@
 .game-detail-container{
     width: 100%;
-    height: fit-content!important;
+    min-height: fit-content;
+    height: 100%;
     padding: 0!important;
     padding-bottom: 50px !important;
     background-color: var(--color-neutral-80);
