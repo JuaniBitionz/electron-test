@@ -1,51 +1,56 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
+var AutoLaunch = require('auto-launch');
 // const Store = require("electron-store");
 
 let appWin;
 // const store = new Store();
 
+const appPath = app.getAppPath();
+
 createWindow = () => {
-    appWin = new BrowserWindow({
-        width: 1280,
-        height: 720,
-        title: "BTZ Launcher",
-        resizable: true,
-        webPreferences: {
-            sandbox: false,
-            contextIsolation: false,
-            nodeIntegration: true,
-        },
+  btzAutoLauncher.enable();
+  appWin = new BrowserWindow({
+    width: 1280,
+    height: 720,
+    title: "BTZ Launcher",
+    resizable: true,
+    webPreferences: {
+      sandbox: false,
+      contextIsolation: false,
+      nodeIntegration: true,
+    },
 
-        titleBarStyle: 'hidden',
-        titleBarOverlay: {
-            color: '#141220',
-            symbolColor: '#79778f',
-            height: 30
-            
-        },
-        
-        
-    });
-    appWin.loadURL(`file://${__dirname}/out/electron-test/index.html`);
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#141220',
+      symbolColor: '#79778f',
+      height: 30
+    },
 
-    appWin.setMenu(null);
-    // appWin.webContents.openDevTools();
 
-    appWin.on("closed", () => {
-        appWin = null;
-    });
+  });
+  appWin.loadURL(`file://${__dirname}/out/electron-test/index.html`);
+
+  appWin.setMenu(null);
+
+  // appWin.webContents.openDevTools();
+
+  appWin.on("closed", () => {
+    appWin = null;
+  });
 }
 
-
-
-app.on("ready", createWindow);
-
-app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") {
-        app.quit();
-    }
+var btzAutoLauncher = new AutoLaunch({
+  name: 'BTZ Launcher',
+  path: 'C:/Users/Bitionz Libre/AppData/Local/Programs/BTZ Launcher/BTZ Launcher.exe',
 });
 
+app.on("ready", createWindow);
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
 // ipcMain.on("message", (event) => {event.reply("reply", "pong")})
 
 // ipcMain.on('open-program', () => {
