@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,10 +22,13 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
-  ) { }
-
+    private router: Router,
+    private auth: AuthService
+  ) {
+  }
+  
   ngOnInit(): void {
+    this.login();
     this.formLogin = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -69,6 +73,9 @@ export class LoginComponent implements OnInit {
     //   this.loginError = error as string;
     //   this.loading = false;
     // }
+    const response = await this.auth.login({account: 'testing-email2@bitionz.net',password: 'a12345'});
+    console.log(response);
+    
     this.router.navigate([``])
   }
 }

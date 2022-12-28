@@ -1,14 +1,27 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 var AutoLaunch = require('auto-launch');
-// const Store = require("electron-store");
+const Store = require("electron-store");
 
 let appWin;
-// const store = new Store();
+const store = new Store();
 
-const appPath = app.getAppPath();
+// const appPath = app.getAppPath();
+
+const exePath = 'C:\\Users\\Bitionz Libre\\AppData\\Local\\Programs\\BTZ Launcher\\BTZ Launcher.exe'
+
+
+const autoLauncher = new AutoLaunch({
+  name: 'BTZ Launcher',
+  path: exePath,
+})
+autoLauncher.disable();
+// autoLauncher.isEnabled().then((isEnabled) => {
+//   if (!isEnabled) {
+//     autoLauncher.enable()
+//   }
+// })
 
 createWindow = () => {
-  btzAutoLauncher.enable();
   appWin = new BrowserWindow({
     width: 1280,
     height: 720,
@@ -33,17 +46,12 @@ createWindow = () => {
 
   appWin.setMenu(null);
 
-  // appWin.webContents.openDevTools();
+  appWin.webContents.openDevTools();
 
   appWin.on("closed", () => {
     appWin = null;
   });
 }
-
-var btzAutoLauncher = new AutoLaunch({
-  name: 'BTZ Launcher',
-  path: 'C:/Users/Bitionz Libre/AppData/Local/Programs/BTZ Launcher/BTZ Launcher.exe',
-});
 
 app.on("ready", createWindow);
 app.on("window-all-closed", () => {
