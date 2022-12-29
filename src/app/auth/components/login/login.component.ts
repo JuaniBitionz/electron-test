@@ -51,31 +51,9 @@ export class LoginComponent implements OnInit {
   }
 
   async login(){
-    // this.loading = true;
-    // this.loginError = '';
-    // try {
-    //   const body = {
-    //     account: this.username?.value,
-    //     password: this.password?.value,
-    //     keepMeSigned: this.remember?.value
-    //   }
-    //   // console.log(body);
-    //   const response = await this.auth.login(body);
-    //   if(this.remember?.value){
-    //     this.cookie.set('session_btz_games', response['jwt'], 28, '/');
-    //   }else{
-    //     this.cookie.set('session_btz_games', response['jwt'], 0, '/');
-    //   }
-    //   this.router.navigate([``])
-    //   this.loading = false;
-    //   //FALTA GUARDAR JWT      
-    // } catch (error) {
-    //   this.loginError = error as string;
-    //   this.loading = false;
-    // }
     const response = await this.auth.login({account: 'testing-email2@bitionz.net',password: 'a12345'});
     console.log(response);
     
-    this.router.navigate([``])
+    this.router.navigate([``]);
   }
 }
